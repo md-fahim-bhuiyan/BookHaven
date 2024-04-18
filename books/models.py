@@ -18,7 +18,9 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField()
-    published_date = models.DateField()
+    added_date = models.DateField()
+    cover_image = models.ImageField(upload_to='book_covers/', default='book_covers/default.jpg')
+
 
     def __str__(self):
         return self.title
